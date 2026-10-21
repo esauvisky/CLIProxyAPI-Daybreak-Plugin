@@ -1,0 +1,52 @@
+name: build
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  plugin:
+    strategy:
+      matrix:
+        include:
+          - runner: ubuntu-latest
+            artifact: linux-amd64
+          - runner: ubuntu-24.04-arm
+            artifact: linux-arm64
+    runs-on: ${{ matrix.runner }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build and test
+        run: make test
+      - name: Name release artifact
+        run: cp build/daybreak-blue.so build/daybreak-blue-${{ matrix.artifact }}.so
+      - uses: actions/upload-artifact@v4
+        with:
+          name: daybreak-blue-${{ matrix.artifact }}
+          path: build/daybreak-blue-${{ matrix.artifact }}.so
+          if-no-files-found: error
+
+  release:
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: plugin
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: daybreak-blue-*
+          path: artifacts
+          merge-multiple: true
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: >-
+          gh release create "$GITHUB_REF_NAME"
+          artifacts/daybreak-blue-linux-amd64.so
+          artifacts/daybreak-blue-linux-arm64.so
+          --repo "$GITHUB_REPOSITORY"
+          --generate-notes
