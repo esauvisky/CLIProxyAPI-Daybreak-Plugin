@@ -76,6 +76,7 @@ int main(int argc, char **argv) {
 	}
 	require_contains(&plugin, "plugin.register", "model_registrar");
 	require_contains(&plugin, "model.register", "gpt-daybreak-blue-latest");
+	require_contains(&plugin, "model.register", "gpt-daybreak-red-latest");
 	plugin.shutdown();
 	if (dlclose(library) != 0) {
 		fprintf(stderr, "dlclose: %s\n", dlerror());

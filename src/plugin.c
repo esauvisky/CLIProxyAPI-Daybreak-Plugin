@@ -40,7 +40,7 @@ typedef struct {
 
 static const char registration_response[] =
 	"{\"ok\":true,\"result\":{\"schema_version\":1,\"metadata\":{"
-	"\"Name\":\"daybreak-blue\",\"Version\":\"0.1.0\","
+	"\"Name\":\"daybreak-blue\",\"Version\":\"0.2.0\","
 	"\"Author\":\"esauvisky\","
 	"\"GitHubRepository\":\"https://github.com/esauvisky/CLIProxyAPI-Daybreak-Plugin\","
 	"\"ConfigFields\":[]},\"capabilities\":{\"model_registrar\":true}}}";
@@ -51,6 +51,17 @@ static const char models_response[] =
 	"\"Created\":1783616400,\"OwnedBy\":\"openai\",\"Type\":\"openai\","
 	"\"DisplayName\":\"Daybreak Blue\",\"Name\":\"gpt-daybreak-blue-latest\","
 	"\"Version\":\"gpt-daybreak-blue-latest\","
+	"\"Description\":\"Latest frontier agentic coding model for broad defensive cybersecurity work.\","
+	"\"ContextLength\":372000,\"MaxCompletionTokens\":128000,"
+	"\"SupportedParameters\":[\"tools\"],"
+	"\"SupportedInputModalities\":[\"text\",\"image\"],"
+	"\"SupportedOutputModalities\":[\"text\"],"
+	"\"Thinking\":{\"Levels\":[\"low\",\"medium\",\"high\",\"xhigh\",\"max\"]},"
+	"\"UserDefined\":true},{"
+	"\"ID\":\"gpt-daybreak-red-latest\",\"Object\":\"model\","
+	"\"Created\":1783616400,\"OwnedBy\":\"openai\",\"Type\":\"openai\","
+	"\"DisplayName\":\"Daybreak Red\",\"Name\":\"gpt-daybreak-red-latest\","
+	"\"Version\":\"gpt-daybreak-red-latest\","
 	"\"Description\":\"Latest frontier agentic coding model for broad defensive cybersecurity work.\","
 	"\"ContextLength\":372000,\"MaxCompletionTokens\":128000,"
 	"\"SupportedParameters\":[\"tools\"],"

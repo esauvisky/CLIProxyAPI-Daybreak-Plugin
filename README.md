@@ -1,6 +1,7 @@
-# CLIProxyAPI Daybreak Blue plugin
+# CLIProxyAPI Daybreak Models plugin
 
-This ABI v1 plugin adds `gpt-daybreak-blue-latest` to the built-in `codex`
+This ABI v1 plugin adds `gpt-daybreak-blue-latest` and
+`gpt-daybreak-red-latest` to the built-in `codex`
 provider without modifying CLIProxyAPI. It can be mounted into the current
 stock container, so CLIProxyAPI updates do not require rebasing a source fork.
 
@@ -31,7 +32,7 @@ plugins:
     - "https://raw.githubusercontent.com/esauvisky/CLIProxyAPI-Daybreak-Plugin/main/registry.json"
 ```
 
-Save the configuration, open **Plugins > Store**, find **Daybreak Blue**, and
+Save the configuration, open **Plugins > Store**, find **Daybreak Models**, and
 click **Install**. The store downloads the correct Linux archive, verifies its
 checksum, installs the plugin, and enables its per-plugin configuration. Keep
 the plugins directory on a persistent container volume so the installed file
@@ -62,7 +63,7 @@ services:
       - ./plugins/daybreak-blue.so:/CLIProxyAPI/plugins/daybreak-blue.so:ro
 ```
 
-The model is appended to every Codex credential. The OpenAI backend still
+The models are appended to every Codex credential. The OpenAI backend still
 enforces account entitlement, so a credential without Daybreak access will
 receive the upstream error when it tries to use the model.
 
