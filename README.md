@@ -13,6 +13,30 @@ make test
 The plugin is written in C and produces `build/daybreak-blue.so` for the host
 architecture.
 
+## Install from the management interface
+
+Add this registry URL to `plugins.store-sources` in the management interface's
+configuration editor:
+
+```text
+https://raw.githubusercontent.com/esauvisky/CLIProxyAPI-Daybreak-Plugin/main/registry.json
+```
+
+The resulting plugin configuration is:
+
+```yaml
+plugins:
+  enabled: true
+  store-sources:
+    - "https://raw.githubusercontent.com/esauvisky/CLIProxyAPI-Daybreak-Plugin/main/registry.json"
+```
+
+Save the configuration, open **Plugins > Store**, find **Daybreak Blue**, and
+click **Install**. The store downloads the correct Linux archive, verifies its
+checksum, installs the plugin, and enables its per-plugin configuration. Keep
+the plugins directory on a persistent container volume so the installed file
+survives container replacement.
+
 ## Configure CLIProxyAPI
 
 Mount the shared library into the configured plugin directory and enable it:

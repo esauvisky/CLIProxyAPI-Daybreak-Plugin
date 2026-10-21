@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "plugins": [
+    {
+      "id": "daybreak-blue",
+      "name": "Daybreak Blue",
+      "description": "Adds gpt-daybreak-blue-latest to the CLIProxyAPI Codex model catalog.",
+      "author": "esauvisky",
+      "version": "0.1.1",
+      "repository": "https://github.com/esauvisky/CLIProxyAPI-Daybreak-Plugin",
+      "homepage": "https://github.com/esauvisky/CLIProxyAPI-Daybreak-Plugin",
+      "license": "MIT",
+      "tags": ["codex", "model"]
+    }
+  ]
+}
