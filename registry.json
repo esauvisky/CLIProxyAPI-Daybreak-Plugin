@@ -6,7 +6,7 @@
       "name": "Daybreak Blue",
       "description": "Adds gpt-daybreak-blue-latest to the CLIProxyAPI Codex model catalog.",
       "author": "esauvisky",
-      "version": "0.1.1",
+      "version": "0.1.2",
       "repository": "https://github.com/esauvisky/CLIProxyAPI-Daybreak-Plugin",
       "homepage": "https://github.com/esauvisky/CLIProxyAPI-Daybreak-Plugin",
       "license": "MIT",

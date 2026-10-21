@@ -14,8 +14,12 @@ jobs:
         include:
           - runner: ubuntu-latest
             artifact: linux-amd64
+            goos: linux
+            goarch: amd64
           - runner: ubuntu-24.04-arm
             artifact: linux-arm64
+            goos: linux
+            goarch: arm64
     runs-on: ${{ matrix.runner }}
     steps:
       - uses: actions/checkout@v4
@@ -29,7 +33,7 @@ jobs:
           RELEASE_VERSION: ${{ github.ref_name }}
         run: |
           version="${RELEASE_VERSION#v}"
-          archive="daybreak-blue_${version}_${{ matrix.artifact }}.zip"
+          archive="daybreak-blue_${version}_${{ matrix.goos }}_${{ matrix.goarch }}.zip"
           (cd build && zip "$archive" daybreak-blue.so)
       - uses: actions/upload-artifact@v4
         with:
