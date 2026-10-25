@@ -40,9 +40,10 @@ typedef struct {
 
 static const char registration_response[] =
 	"{\"ok\":true,\"result\":{\"schema_version\":1,\"metadata\":{"
-	"\"Name\":\"daybreak-blue\",\"Version\":\"0.2.0\","
+	"\"Name\":\"daybreak-blue\",\"Version\":\"0.2.1\","
 	"\"Author\":\"esauvisky\","
 	"\"GitHubRepository\":\"https://github.com/esauvisky/CLIProxyAPI-Daybreak-Plugin\","
+	"\"Logo\":\"https://raw.githubusercontent.com/esauvisky/CLIProxyAPI-Daybreak-Plugin/main/assets/logo.png\","
 	"\"ConfigFields\":[]},\"capabilities\":{\"model_registrar\":true}}}";
 
 static const char models_response[] =
