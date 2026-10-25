@@ -6,7 +6,7 @@
       "name": "Daybreak Models",
       "description": "Adds the Daybreak Blue and Daybreak Red models to the CLIProxyAPI Codex model catalog.",
       "author": "esauvisky",
-      "version": "0.2.1",
+      "version": "0.2.2",
       "repository": "https://github.com/esauvisky/CLIProxyAPI-Daybreak-Plugin",
       "homepage": "https://github.com/esauvisky/CLIProxyAPI-Daybreak-Plugin",
       "logo": "https://raw.githubusercontent.com/esauvisky/CLIProxyAPI-Daybreak-Plugin/main/assets/logo.png",
